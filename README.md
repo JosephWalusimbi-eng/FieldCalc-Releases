@@ -40,14 +40,16 @@ Calculation history is stored in `%APPDATA%\FieldCalc`.
 
 ## What's included
 
-- **Electrical:** cable sizing and voltage drop (IEC 60364-5-52, BS 7671), load schedule, solar PV, battery bank, transformer, power factor correction, short-circuit current
-- **Electronics:** resistor networks and dividers, RC/RL/LC filters, op-amp circuits, power supply, PCB trace width (IPC-2221), battery runtime, Edge AI estimates
-- **Civil:** concrete volumes and materials, beam deflection, column load, pipe flow and drainage, soil bearing
+- **Electrical:** cable sizing and voltage drop (IEC 60364-5-52, BS 7671), load schedules, solar PV, battery banks, transformers, power factor correction, short-circuit current, earthing (BS 7430 rods, BS 7671 fault loop), standby generator sizing
+- **Electronics:** resistor networks and dividers, RC/RL/LC filters, op-amp circuits, power supplies, PCB trace width (IPC-2221), battery runtime
+- **Civil:** concrete volumes and materials, beam deflection, column load (BS 8110 / BS 5950), pipe flow and drainage, soil bearing and settlement, bar bending schedules, masonry and plaster quantities
 - **Mechanical:** pump sizing, motor selection, shaft power, heat load, belt and pulley
+- **Water & Sanitation:** water demand, storage and rainwater tanks, solar borehole pumps, septic tanks (BS 6297) and soak pits
+- **AI & ML:** LLM memory and speed, model evaluation metrics, Edge AI estimators, solar power for AI devices
 - **Nuclear (estimation only):** dose rate, shielding thickness, isotope decay
-- **Field measurement:** measure lengths from a photo using a reference object
+- **Tools:** scientific calculator on every screen, projects and history with whole-project PDF reports, field measurement from a photo, light and dark themes
 
-On Android, the load schedule, solar off-grid, power supply and battery runtime calculators are available on Windows only for now.
+Every calculation is checked by an automated test suite against independently worked reference examples.
 
 > FieldCalc is a calculation aid. Have results checked by a qualified engineer before using them in design, construction or safety decisions. The nuclear module is not certified software.
 
