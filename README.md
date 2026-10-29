@@ -18,7 +18,7 @@ Get the latest version from the **[Releases page](../../releases/latest)**.
 | Android 7.0+ | `FieldCalc-<version>.apk` | See *Installing on Android* below |
 | Windows 10/11 (64-bit) | `FieldCalc-<version>-windows-x64.zip` | Unzip and run `FieldCalc.exe` |
 
-FieldCalc will also be available on Google Play and the Microsoft Store. Store versions update automatically.
+On Windows, FieldCalc is also in the **[Microsoft Store](https://apps.microsoft.com/detail/9PFVRN728498)**, where it updates automatically. Google Play is coming. FieldCalc is available in English and French.
 
 ### Installing on Android
 1. Download the `.apk` file on your phone.
