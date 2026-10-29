@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FieldCalc – Offline Engineering Calculator for Android and Windows</title>
+<meta name="description" content="FieldCalc is a free, offline engineering calculator for field engineers: cable sizing, solar PV, earthing, concrete, pumps, water and sanitation, with step-by-step working and PDF reports. Download for Android (APK) and Windows.">
+<meta name="keywords" content="FieldCalc, engineering calculator, offline engineering app, cable sizing, voltage drop, solar PV sizing, earthing, concrete calculator, pump sizing, Android APK, Windows, Uganda, Kenya, East Africa, Arapai Technologies International">
+<meta name="author" content="Arapai Technologies International">
+<link rel="canonical" href="https://josephwalusimbi-eng.github.io/FieldCalc-Releases/">
+<meta name="theme-color" content="#1F4E79">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FieldCalc">
+<meta property="og:title" content="FieldCalc – Offline Engineering Calculator">
+<meta property="og:description" content="Free engineering calculations for the field, with step-by-step working and PDF reports. Android and Windows. No internet needed.">
+<meta property="og:url" content="https://josephwalusimbi-eng.github.io/FieldCalc-Releases/">
+<meta property="og:image" content="https://josephwalusimbi-eng.github.io/FieldCalc-Releases/assets/social-card.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FieldCalc",
+  "description": "Offline engineering calculator for field engineers: electrical, electronics, civil, mechanical, water and sanitation, AI and ML, with step-by-step working and PDF reports.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Android 7.0+, Windows 10, Windows 11",
+  "softwareVersion": "1.1.0",
+  "downloadUrl": [
+    "https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/releases/download/v1.1.0/FieldCalc-1.1.0.apk",
+    "https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/releases/download/v1.1.0/FieldCalc-1.1.0-windows-x64.zip"
+  ],
+  "image": "https://josephwalusimbi-eng.github.io/FieldCalc-Releases/assets/icon-512.png",
+  "screenshot": "https://josephwalusimbi-eng.github.io/FieldCalc-Releases/assets/desktop-cable.webp",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "Arapai Technologies International", "email": "arapaigroup@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "Arapai Technologies International" }
+}
+</script>
+
+<style>
+:root {
+  --blue-dark: #1F4E79;
+  --blue: #2E75B6;
+  --orange: #F39C12;
+  --bg: #F5F7FA;
+  --surface: #FFFFFF;
+  --text: #1C2733;
+  --muted: #5B6B7B;
+  --border: #DCE3EA;
+  --code-bg: #EEF2F6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11161C;
+    --surface: #1A222B;
+    --text: #E6ECF2;
+    --muted: #9AA8B6;
+    --border: #2C3742;
+    --code-bg: #222C36;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--blue); }
+@media (prefers-color-scheme: dark) { a { color: #7FB3E8; } }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+header.hero {
+  background: linear-gradient(160deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: #fff;
+  padding: 56px 0 64px;
+}
+.brand { display: flex; align-items: center; gap: 18px; }
+.brand img { width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.brand h1 { margin: 0; font-size: 2.6rem; letter-spacing: -.5px; }
+.brand p { margin: 2px 0 0; opacity: .85; font-size: .95rem; }
+.hero .lead { font-size: 1.25rem; max-width: 720px; margin: 28px 0 8px; }
+.hero .sub { opacity: .85; max-width: 720px; margin: 0 0 32px; }
+
+.downloads { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 22px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1.05rem;
+  background: #fff; color: var(--blue-dark);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+.btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.btn svg { width: 26px; height: 26px; flex: none; }
+.btn small { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); }
+.btn.primary { background: var(--orange); color: #1C2733; }
+.btn.primary small { color: #3D2A05; }
+.hero .meta { margin-top: 18px; font-size: .9rem; opacity: .85; }
+.hero .meta a { color: #fff; }
+
+section { padding: 56px 0; }
+section h2 { font-size: 1.7rem; margin: 0 0 8px; }
+section .intro { color: var(--muted); margin: 0 0 28px; max-width: 760px; }
+
+.shots { display: grid; gap: 16px; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); display: block; background: var(--surface); }
+.shots figcaption { color: var(--muted); font-size: .85rem; margin-top: 6px; }
+.desk-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 22px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+.card h3::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--accent, var(--blue)); flex: none; }
+.card p, .card ul { margin: 0; color: var(--muted); font-size: .95rem; }
+.card ul { padding-left: 18px; }
+
+.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.why div { border-left: 4px solid var(--orange); padding: 4px 0 4px 14px; }
+.why strong { display: block; }
+.why span { color: var(--muted); font-size: .95rem; }
+
+.install { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.install ol { margin: 8px 0 0; padding-left: 20px; }
+.install li { margin-bottom: 6px; }
+code {
+  font-family: Consolas, "Courier New", monospace; font-size: .85rem;
+  background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+.checksums code { display: block; padding: 8px 10px; margin-top: 4px; }
+
+.note {
+  background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--orange);
+  border-radius: 8px; padding: 14px 18px; color: var(--muted); font-size: .95rem;
+}
+
+footer { border-top: 1px solid var(--border); padding: 28px 0 40px; color: var(--muted); font-size: .9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 760px) {
+  header.hero { padding: 36px 0 44px; }
+  .brand h1 { font-size: 2rem; }
+  .brand img { width: 56px; height: 56px; }
+  .hero .lead { font-size: 1.1rem; }
+  .btn { width: 100%; }
+  .install, .desk-extra { grid-template-columns: 1fr; }
+  section { padding: 40px 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/icon-192.png" alt="FieldCalc icon" width="72" height="72">
+      <div>
+        <h1>FieldCalc</h1>
+        <p>Arapai Technologies International · Advancing Innovation</p>
+      </div>
+    </div>
+    <p class="lead">Engineering calculations for the field: offline, step by step, with PDF reports.</p>
+    <p class="sub">Cable sizing, solar PV, earthing, concrete, pumps, water supply and more, checked against standard reference examples. Free, with no account, no ads and no internet connection needed.</p>
+
+    <div class="downloads">
+      <a class="btn primary" id="dl-android" href="https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/releases/download/v1.1.0/FieldCalc-1.1.0.apk">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.6 9.48l1.84-3.18a.5.5 0 00-.86-.5l-1.87 3.23A11.4 11.4 0 0012 8a11.4 11.4 0 00-4.71 1.03L5.42 5.8a.5.5 0 00-.86.5l1.84 3.18A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+        <span>Download for Android<small>APK · 45 MB · Android 7.0 or later</small></span>
+      </a>
+      <a class="btn" id="dl-windows" href="https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/releases/download/v1.1.0/FieldCalc-1.1.0-windows-x64.zip">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.1l7.4-1v7.2H3V5.1zm0 13.8l7.4 1v-7.1H3v6.1zm8.3 1.1L21 21.4v-8.6h-9.7v7.2zm0-16l0 7.3H21V2.6l-9.7 1.4z"/></svg>
+        <span>Download for Windows<small>ZIP · 101 MB · Windows 10/11, 64-bit</small></span>
+      </a>
+    </div>
+    <p class="meta">Version 1.1.0 · <a href="https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/releases">All versions and release notes</a> · <a href="#install">How to install</a></p>
+  </div>
+</header>
+
+<main>
+  <section id="screens">
+    <div class="wrap">
+      <h2>One app, on site and in the office</h2>
+      <p class="intro">The same calculation engines run on Windows and Android, so a result on the phone matches the one on the PC. Light and dark themes.</p>
+      <div class="shots">
+        <figure>
+          <img src="assets/desktop-cable.webp" alt="FieldCalc on Windows: three-phase cable sizing result with the recommended cable, results table and working steps" width="1280" height="700" loading="lazy">
+          <figcaption>Cable sizing: recommended cable, voltage-drop check and full working.</figcaption>
+        </figure>
+        <div class="desk-extra">
+          <figure>
+            <img src="assets/desktop-home.webp" alt="FieldCalc home screen with discipline cards" width="1280" height="700" loading="lazy">
+            <figcaption>Seven disciplines, measurement and a calculator.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/desktop-beam-dark.webp" alt="Beam deflection result in the dark theme" width="1280" height="700" loading="lazy">
+            <figcaption>Dark theme: beam deflection.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" style="padding-top:0">
+    <div class="wrap">
+      <h2>What it calculates</h2>
+      <p class="intro">Seven disciplines, 38 workflows and 85 calculations. Every result shows its formula and step-by-step working, and can be saved to a project or exported as a PDF calculation sheet.</p>
+      <div class="grid">
+        <div class="card" style="--accent:#1F4E79"><h3>Electrical</h3><p>Cable sizing and voltage drop (IEC 60364-5-52, BS 7671), load schedules, solar PV (off-grid and grid-tied), battery banks, transformers, power factor correction, short-circuit current, earthing (BS 7430, BS 7671), standby generators.</p></div>
+        <div class="card" style="--accent:#2E75B6"><h3>Electronics</h3><p>Voltage dividers and resistor networks, RC/RL/LC filters, op-amp circuits, power supplies, PCB trace width (IPC-2221), battery runtime.</p></div>
+        <div class="card" style="--accent:#3A5A25"><h3>Civil</h3><p>Concrete volumes and materials, beam deflection, column load (BS 8110, BS 5950), pipe flow and drainage, soil bearing and settlement, bar bending schedules, masonry and plaster.</p></div>
+        <div class="card" style="--accent:#7A3E00"><h3>Mechanical</h3><p>Pump sizing and operating point, motor selection, shaft power and diameter, heat load and ventilation, belts, pulleys and chains.</p></div>
+        <div class="card" style="--accent:#0E7C86"><h3>Water &amp; Sanitation</h3><p>Water demand, storage and rainwater tanks, solar borehole pumping, septic tanks (BS 6297) and soak pits.</p></div>
+        <div class="card" style="--accent:#AD1457"><h3>AI &amp; ML</h3><p>LLM memory and speed, model evaluation metrics, Edge AI hardware estimates, solar power for AI devices.</p></div>
+        <div class="card" style="--accent:#B7500C"><h3>Nuclear <span style="font-weight:400;font-size:.85rem">(estimation only)</span></h3><p>Dose rate, shielding thickness and isotope decay, with mandatory warnings. Not certified software.</p></div>
+        <div class="card" style="--accent:#F39C12"><h3>Tools</h3><p>Scientific calculator on every screen, projects with whole-project PDF reports, and length measurement from a photo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" style="padding-top:0">
+    <div class="wrap">
+      <h2>Why engineers use it</h2>
+      <div class="why">
+        <div><strong>Works offline</strong><span>No signal on site is no problem. Nothing is sent anywhere.</span></div>
+        <div><strong>Shows its working</strong><span>Every answer comes with the formula and each step, ready to check.</span></div>
+        <div><strong>Checked</strong><span>An automated test suite compares every calculation with independently worked reference examples.</span></div>
+        <div><strong>Reports you can hand over</strong><span>PDF calculation sheets and whole-project reports.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" style="padding-top:0">
+    <div class="wrap">
+      <h2>How to install</h2>
+      <div class="install">
+        <div class="card">
+          <h3>Android</h3>
+          <ol>
+            <li>Tap <strong>Download for Android</strong> on your phone.</li>
+            <li>Open the downloaded file. If Android asks, allow your browser or file manager to <strong>install unknown apps</strong>.</li>
+            <li>Tap <strong>Install</strong>, then open FieldCalc.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Windows</h3>
+          <ol>
+            <li>Download the ZIP and unzip it to a folder, for example <code>C:\FieldCalc</code>.</li>
+            <li>Run <code>FieldCalc.exe</code>.</li>
+            <li>If Windows SmartScreen says "Windows protected your PC", choose <strong>More info → Run anyway</strong>. It appears because this download isn't code-signed.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="note" style="margin-top:16px">FieldCalc is coming to Google Play and the Microsoft Store, where it will update automatically.</p>
+      <div class="card checksums" style="margin-top:16px">
+        <h3>Check your download (optional)</h3>
+        <p>SHA-256 of version 1.1.0:</p>
+        <p style="margin-top:8px">FieldCalc-1.1.0.apk<code>d838d1706a8b0444cfb2f5a5a495064e9c1ad4bdd1b3ea83682291df3eb890c1</code></p>
+        <p style="margin-top:8px">FieldCalc-1.1.0-windows-x64.zip<code>7187fd28d7045c91b2a5bc118b55bfe4e808bbe375e561e5d0b278e76e81dda0</code></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" style="padding-top:0">
+    <div class="wrap">
+      <h2>Privacy and responsible use</h2>
+      <p class="intro" style="margin-bottom:12px">FieldCalc collects no data. Your calculations and projects stay on your device. Read the <a href="https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/blob/main/PRIVACY_POLICY.md">privacy policy</a>.</p>
+      <p class="note">FieldCalc is a calculation aid. Have results checked by a qualified engineer before using them in design, construction or safety decisions. The nuclear module provides estimates for awareness only and is not certified software.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Arapai Technologies International · Advancing Innovation</span>
+    <span>Support: <a href="mailto:arapaigroup@gmail.com">arapaigroup@gmail.com</a> · <a href="https://github.com/JosephWalusimbi-eng/FieldCalc-Releases/issues">Report a problem</a></span>
+  </div>
+</footer>
+
+<script>
+  // On Android, the Android button is already first and highlighted. On a PC, highlight Windows instead.
+  (function () {
+    var ua = navigator.userAgent || "";
+    if (!/Android/i.test(ua) && /Windows/i.test(ua)) {
+      var a = document.getElementById("dl-android"), w = document.getElementById("dl-windows");
+      a.classList.remove("primary"); w.classList.add("primary");
+      w.parentNode.insertBefore(w, a);
+    }
+  })();
+</script>
+</body>
+</html>

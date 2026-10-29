@@ -5,6 +5,8 @@
 **Field engineering calculations — offline, step by step, with PDF reports.**
 By Arapai Technologies International · Advancing Innovation
 
+**Website:** https://josephwalusimbi-eng.github.io/FieldCalc-Releases/
+
 FieldCalc covers electrical, electronics, civil and mechanical engineering, with a nuclear module for estimation and awareness only. Every result shows its formula and working, and can be exported as a PDF calculation sheet. It needs no internet connection, account or ads.
 
 ## Download
